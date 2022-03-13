@@ -15,6 +15,12 @@
     display: flex;
     align-items: center;
 
+    h3{
+        font-family: 'Oranienbaum', serif;
+        font-style: italic;
+        margin-left: 15px;
+    }
+
     h2 {
         width: 90%;
         text-align: center;
@@ -23,6 +29,7 @@
 
     .burger {
         width: 60px;
+        margin-right: 15px;
         div {
             background: #000;
             width: 100%;
