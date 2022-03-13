@@ -1,12 +1,23 @@
 // Google font
+@import url('https://fonts.googleapis.com/css2?family=Oranienbaum&family=Poppins:wght@300&display=swap');
+
+@font-face {
+  font-family: 'mattone';
+  src: url('fonts/Mattone-150.woff2') format('woff2'),
+    url('fonts/Mattone-150.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Couleurs
+$dark: #000;
+$primary: #e9e8e2;
 
 *,
 ::before,
 ::after {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000;
   font-weight: 300;
   margin: 0;
@@ -23,3 +34,11 @@ li {
   list-style: none;
 }
 
+body {
+  min-height: 100vh;
+  background: $primary;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
