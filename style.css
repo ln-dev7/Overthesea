@@ -78,6 +78,7 @@ body::-webkit-scrollbar {
 }
 
 .aside-left-bottom {
+  position: relative;
   grid-area: 12/10/20/14;
   border-left: 2px solid #000;
   display: flex;
@@ -85,36 +86,39 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 .aside-left-bottom img {
+  position: absolute;
   width: 70%;
   margin-bottom: 30px;
 }
-.aside-left-bottom div {
-  position: absolute;
+.aside-left-bottom a {
+  font-size: 1.1em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.aside-left-bottom div p {
-  font-size: 20px;
-}
-.aside-left-bottom div div {
-  margin-left: 5px;
-  position: relative;
-  display: flex;
-  width: 70px;
-}
-.aside-left-bottom div div div:first-child {
-  position: absolute;
-  width: 65px;
-  height: 1px;
-  right: 0;
+.aside-left-bottom a .arrow {
   background: #000;
+  height: 1px;
+  width: 3em;
+  margin-left: 0.5em;
+  position: relative;
 }
-.aside-left-bottom div div div:last-child {
+.aside-left-bottom a .arrow::before, .aside-left-bottom a .arrow::after {
   position: absolute;
-  left: 65px;
-  border: 5px solid transparent;
-  border-left: 5px solid #000;
+  content: "";
+  background: #000;
+  height: 1px;
+  width: 0.5em;
+  right: 0;
+  top: 0;
+}
+.aside-left-bottom a .arrow::before {
+  transform: rotate(45deg);
+  transform-origin: right bottom;
+}
+.aside-left-bottom a .arrow::after {
+  transform: rotate(-45deg);
+  transform-origin: right bottom;
 }
 
 .aside-right {
@@ -192,6 +196,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+@media only screen and (max-width: 1150px) {
+  .aside-left-bottom a {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .aside-left-bottom img {
+    margin-bottom: 15px;
+  }
+  .aside-left-bottom a {
+    font-size: 0.7em;
+  }
+}
 @media only screen and (max-width: 750px) {
   .parent {
     min-height: 100vh;
@@ -242,7 +259,11 @@ body::-webkit-scrollbar {
     padding: 10px;
   }
 
-  .content, .aside-left-bottom, .aside-left-top, .footer-left, .footer-right {
+  .content,
+.aside-left-bottom,
+.aside-left-top,
+.footer-left,
+.footer-right {
     display: none;
   }
 }
